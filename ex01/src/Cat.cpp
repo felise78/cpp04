@@ -6,12 +6,16 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:53:31 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/05 17:14:24 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include <iostream>
+
+// ###############################
+// #       FORME CANONIQUE       #
+// ###############################
 
 Cat::Cat() : Animal()
 {
@@ -20,9 +24,12 @@ Cat::Cat() : Animal()
 	std::cout << "Cat has been created." << std::endl;
 }
 
+Cat::Cat( const Cat &copy )
+{
+	*this = copy;
+}
 
-
-Cat& Cat::operator=(Cat const& src) 
+Cat& Cat::operator=( const Cat &src ) 
 {
     if(this != &src)
     {
@@ -38,10 +45,20 @@ Cat::~Cat()
 	std::cout << "Cat has been destructed." << std::endl;
 }
 
+
+// ###############################
+// #      FONCTION  MEMBRE       #
+// ###############################
+
 void Cat::makeSound( void ) const
 {
 	std::cout << "*meeeeeeow*" << std::endl;
 }
+
+
+// ##############################
+// #         ACCESSEUR          #
+// ##############################
 
 std::string	Cat::getType( void ) const
 {

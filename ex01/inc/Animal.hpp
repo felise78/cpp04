@@ -1,13 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:33:15 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:33:31 by hemottu          ###   ########.fr       */
+/*   Created: 2023/12/05 12:03:27 by hemottu           #+#    #+#             */
+/*   Updated: 2023/12/05 14:28:34 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
+#include <string>
+
+class Animal
+{
+	public:
+	Animal();
+	Animal( const Animal &copy );
+	Animal& operator=( const Animal &src );
+	virtual ~Animal();
+	
+	virtual void makeSound( void ) const;
+	
+	virtual std::string getType( void ) const;
+
+	protected:
+	std::string type;
+};
+
+#endif

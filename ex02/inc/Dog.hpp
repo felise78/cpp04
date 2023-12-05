@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:11:01 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:47:41 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/05 14:29:55 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ class Dog : public Animal
 {
 	public:
 	Dog();
+	Dog( const Dog &copy );
+	Dog& operator=( const Dog &src );
 	virtual ~Dog();
 	
 	virtual void makeSound( void ) const;
 
 	virtual std::string getType( void ) const;
 
-	// private:
-	// Brain *brain;
+	private:
+	Brain *brain;
 };
 
 #endif

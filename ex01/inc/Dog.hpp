@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:09:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:47:37 by hemottu          ###   ########.fr       */
+/*   Created: 2023/12/05 12:11:01 by hemottu           #+#    #+#             */
+/*   Updated: 2023/12/05 14:29:55 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <string>
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public Animal
 {
 	public:
-	Cat();
-	virtual ~Cat();
+	Dog();
+	Dog( const Dog &copy );
+	Dog& operator=( const Dog &src );
+	virtual ~Dog();
 	
 	virtual void makeSound( void ) const;
 
 	virtual std::string getType( void ) const;
 
-	// private:
-	// Brain *brain;
+	private:
+	Brain *brain;
 };
 
 #endif
