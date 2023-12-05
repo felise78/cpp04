@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME 		= animal
 CXX			=	c++
-CXXFLAGS		=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 # directories
 SRC_DIR		=	src/
@@ -38,13 +38,13 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 #all rule
 all: $(NAME)
-#	@printf "\n"
-#	@printf "$(GREEN)            ___ ___        ___    _____    _     _      ___ ___ \n$(RESET)"
-#	@printf "$(GREEN) ___ _ _   |   |   |   ___|  _|  |    _| _| |_ _| |_   |   |_  |\n$(RESET)"
-#	@printf "$(GREEN)| -_|_'_|  | | | | |  | . |  _|  |   |_ |_   _|_   _|  | | |  _|\n$(RESET)"
-#	@printf "$(GREEN)|___|_,_|  |___|___|  |___|_|    |_____|  |_|   |_|    |___|___|\n$(RESET)"
-#	@printf "$(GREEN)                                                                \n$(RESET)"
-#	@printf "\n"
+	@printf "\n"
+	@printf "$(GREEN)  ____ ____  ____   ___  _  _                ___ ____ \n$(RESET)"
+	@printf "$(GREEN) / ___|  _ \|  _ \ / _ \| || |     _____  __/ _ \___ \\n$(RESET)"
+	@printf "$(GREEN)| |   | |_) | |_) | | | | || |_   / _ \ \/ / | | |__) |\n$(RESET)"
+	@printf "$(GREEN)| |___|  __/|  __/| |_| |__   _| |  __/>  <| |_| / __/\n$(RESET)"
+	@printf "$(GREEN) \____|_|   |_|    \___/   |_|    \___/_/\_\\___/_____|\n$(RESET)"
+	@printf "\n"
 
 #compile the executable
 $(NAME): $(OBJ)
