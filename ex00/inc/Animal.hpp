@@ -15,6 +15,12 @@
 
 #include <string>
 
+// codes de couleur
+#define RESET   "\033[0m"
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"      /* Green */
+#define BLUE    "\033[34m"      /* Blue */
+
 class Animal
 {
 	public:

@@ -16,17 +16,17 @@
 Dog::Dog() : Animal()
 {
 	type = "Dog";
-	std::cout << "Dog has been created." << std::endl;
+	std::cout << BLUE << "Dog has been created." << RESET <<  std::endl;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog has been destructed." << std::endl;
+	std::cout << BLUE << "Dog has been destructed." << RESET << std::endl;
 }
 
 void Dog::makeSound( void ) const
 {
-	std::cout << "*woof woof*" << std::endl;
+	std::cout << BLUE << "*woof woof*" << RESET << std::endl;
 }
 
 std::string	Dog::getType( void ) const

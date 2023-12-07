@@ -21,10 +21,10 @@ Cat::Cat() : Animal()
 {
 	type = "Cat";
 	brain = new Brain;
-	std::cout << "Cat has been created." << std::endl;
+	std::cout << GREEN << "Cat has been created." << RESET << std::endl;
 }
 
-Cat::Cat( const Cat &copy )
+Cat::Cat( const Cat &copy ) : Animal(copy)
 {
 	*this = copy;
 }
@@ -42,7 +42,7 @@ Cat& Cat::operator=( const Cat &src )
 Cat::~Cat()
 {
 	delete brain;
-	std::cout << "Cat has been destructed." << std::endl;
+	std::cout << GREEN << "Cat has been destructed." << RESET << std::endl;
 }
 
 
@@ -52,7 +52,7 @@ Cat::~Cat()
 
 void Cat::makeSound( void ) const
 {
-	std::cout << "*meeeeeeow*" << std::endl;
+	std::cout << GREEN << "*meeeeeeow*" << RESET << std::endl;
 }
 
 

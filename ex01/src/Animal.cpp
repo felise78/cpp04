@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
 // ###############################
@@ -19,7 +20,7 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal has been created." << std::endl;
+	std::cout << RED << "Animal has been created." << RESET << std::endl;
 }
 
 Animal::Animal( const Animal &copy )
@@ -29,17 +30,14 @@ Animal::Animal( const Animal &copy )
 
 Animal& Animal::operator=( const Animal &src )
 {
-	// if (*this != src)
-	// {
-		
-	// }
-	(void)src; //
+	if(this != &src)
+		type = src.type;
 	return *this;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal has been destructed." << std::endl;
+	std::cout << RED << "Animal has been destructed." << RESET << std::endl;
 }
 
 
@@ -49,7 +47,7 @@ Animal::~Animal()
 
 void Animal::makeSound( void ) const
 {
-	std::cout << "*animal sound*" << std::endl;
+	std::cout << RED << "*animal sound*" << RESET << std::endl;
 }
 
 
@@ -59,5 +57,5 @@ void Animal::makeSound( void ) const
 
 std::string	Animal::getType( void ) const
 {
-	return type;
+	return this->type;
 }

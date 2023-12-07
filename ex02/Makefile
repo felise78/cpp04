@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= animal
+NAME 		= 	animal
 CXX			=	c++
 CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
@@ -48,17 +48,17 @@ all: $(NAME)
 
 #compile the executable
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+#	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
+#	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
 
 #compile objects
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
+#	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
 	@$(CXX) $(CXXFLAGS) -I $(INC_DIR) -o $@ -c $<
 	@printf "$(UP)$(CUT)"
-	@echo "$(GREEN)Finished [$@]$(RESET)"
+#	@echo "$(GREEN)Finished [$@]$(RESET)"
 	@printf "$(UP)$(CUT)"
 
 #clean rule

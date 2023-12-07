@@ -21,28 +21,40 @@ Dog::Dog() : Animal()
 {
 	type = "Dog";
 	brain = new Brain;
-	std::cout << "Dog has been created." << std::endl;
+	std::cout << BLUE << "Dog has been created." << RESET << std::endl;
 }
 
-Dog::Dog( const Dog &copy )
+Dog::Dog( const Dog &copy ) : Animal(copy)
 {
+	// brain = new Brain();
+	// brain = *(copy.brain);
+	// type = copy.type;
 	*this = copy;
 }
 
 Dog& Dog::operator=( const Dog &src )
 {
 	if(this != &src)
-    {
-		delete brain;
-       	brain = new Brain(*(src.brain));
-    }
+	{
+		delete this->brain;
+		this->brain = new Brain;
+		// if (this->brain == NULL)
+		// {
+		// 	perror("Dog Brain allocation failed"); //cerr ile yaz!!!
+		// 	std::cerr << "Exiting the process now." << std::endl;
+		// 	exit(1);
+		// }
+		*this->brain = *(src.brain);
+		//this->setType(src.getType());
+		type = src.type;
+	}
     return *this;
 }
 
 Dog::~Dog()
 {
 	delete brain;
-	std::cout << "Dog has been destructed." << std::endl;
+	std::cout << BLUE << "Dog has been destructed." << RESET << std::endl;
 }
 
 
@@ -52,7 +64,7 @@ Dog::~Dog()
 
 void Dog::makeSound( void ) const
 {
-	std::cout << "*woof woof*" << std::endl;
+	std::cout << BLUE << "*woof woof*" << RESET << std::endl;
 }
 
 

@@ -15,17 +15,17 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal has been created." << std::endl;
+	std::cout << RED << "Animal has been created." << RESET << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal has been destructed." << std::endl;
+	std::cout << RED << "Animal has been destructed." << RESET << std::endl;
 }
 
 void Animal::makeSound( void ) const
 {
-	std::cout << "*animal sound*" << std::endl;
+	std::cout << RED << "*animal sound*" << RESET << std::endl;
 }
 
 std::string	Animal::getType( void ) const

@@ -44,11 +44,18 @@
 int main()
 {
 	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* k(j);
+	//const Animal* i = new Cat();
 
-	j = i; // la avec valgrind ca ne va pas
+	//j->brain.ideas[0] = "coucou";
+	std::cout << j->getType() << std::endl;
+	std::cout << k->getType() << std::endl;
+	//std::cout << j->brain.ideas[0] << std::endl;
+	//j = i; // la avec valgrind ca ne va pas
 	delete j;//should not create a leak
-	delete i;
+	//delete i;
+
+
 
 	return 0;
 }

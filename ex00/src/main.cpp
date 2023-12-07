@@ -15,13 +15,7 @@
 #include "Dog.hpp"
 #include <iostream>
 
-// int main()
-// {
-// 	Animal *cat;
-// 	cat = new Cat;
-
-// 	cat->makeSound();
-// }
+// Faire des tests;
 
 int main()
 {
