@@ -13,10 +13,25 @@
 #include "Dog.hpp"
 #include <iostream>
 
+// ###############################
+// #       FORME CANONIQUE       #
+// ###############################
+
 Dog::Dog() : Animal()
 {
-	type = "Dog";
+	m_type = "Dog";
 	std::cout << BLUE << "Dog has been created." << RESET <<  std::endl;
+}
+
+Dog::Dog( const Dog &copy ) : Animal(copy)
+{
+	*this = copy;
+	std::cout << BLUE << "Dog copy has been created." << RESET <<  std::endl;
+}
+
+Dog& Dog::operator=( const Dog &src)
+{
+
 }
 
 Dog::~Dog()
@@ -24,12 +39,20 @@ Dog::~Dog()
 	std::cout << BLUE << "Dog has been destructed." << RESET << std::endl;
 }
 
-void Dog::makeSound( void ) const
-{
-	std::cout << BLUE << "*woof woof*" << RESET << std::endl;
-}
+// ##############################
+// #    MUTATEUR & ACCESSEUR    #
+// ##############################
 
 std::string	Dog::getType( void ) const
 {
-	return type;
+	return (this->m_type);
+}
+
+// ###############################
+// #       FONCTION MEMBRE       #
+// ###############################
+
+void Dog::makeSound( void ) const
+{
+	std::cout << BLUE << "*woof woof*" << RESET << std::endl;
 }

@@ -13,10 +13,26 @@
 #include "Cat.hpp"
 #include <iostream>
 
+// ###############################
+// #       FORME CANONIQUE       #
+// ###############################
+
 Cat::Cat() : Animal()
 {
-	type = "Cat";
+	m_type = "Cat";
 	std::cout << GREEN << "Cat has been created." << RESET << std::endl;
+}
+
+Cat::Cat( const Cat &copy ) : Animal(copy)
+{
+	*this = copy;
+	std::cout << GREEN << "Cat copy has been created." << RESET << std::endl;
+}
+
+Cat& Cat::operator=( const Cat &src )
+{
+	m_type = src.m_type;
+	return *this;
 }
 
 Cat::~Cat()
@@ -24,12 +40,22 @@ Cat::~Cat()
 	std::cout << GREEN << "Cat has been destructed." << RESET << std::endl;
 }
 
-void Cat::makeSound( void ) const
-{
-	std::cout << GREEN << "*meeeeeeow*" << RESET << std::endl;
-}
+
+// ##############################
+// #    MUTATEUR & ACCESSEUR    #
+// ##############################
 
 std::string	Cat::getType( void ) const
 {
-	return type;
+	return (this->m_type);
+}
+
+
+// ###############################
+// #       FONCTION MEMBRE       #
+// ###############################
+
+void Cat::makeSound( void ) const
+{
+	std::cout << GREEN << "*meeeeeeow*" << RESET << std::endl;
 }

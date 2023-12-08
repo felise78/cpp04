@@ -20,11 +20,13 @@ class Dog : public Animal
 {
 	public:
 	Dog();
-	virtual ~Dog();
+	Dog( const Dog &copy );
+	Dog& operator=( const Dog &src);
+	~Dog();
 	
-	virtual void makeSound( void ) const;
+	void makeSound( void ) const;
 
-	virtual std::string getType( void ) const;
+	std::string getType( void ) const;
 };
 
 #endif
