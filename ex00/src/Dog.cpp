@@ -31,7 +31,8 @@ Dog::Dog( const Dog &copy ) : Animal(copy)
 
 Dog& Dog::operator=( const Dog &src)
 {
-
+	this->m_type = src.m_type;
+	return *this;
 }
 
 Dog::~Dog()

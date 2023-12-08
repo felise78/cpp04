@@ -55,7 +55,7 @@ Animal::Animal(std::string type) : m_type(type)
 
 void Animal::setType( std::string type)
 {
-	m_type = type;
+	this->m_type = type;
 }
 
 std::string	Animal::getType( void ) const

@@ -11,14 +11,15 @@ WrongCat::WrongCat() : WrongAnimal()
 	std::cout << GREEN << "WrongCat has been created." << RESET << std::endl;
 }
 
-WrongCat::WrongCat( const WrongCat &copy )
+WrongCat::WrongCat( const WrongCat &copy ) : WrongAnimal(copy)
 {
-
+    *this = copy;
 }
 
 WrongCat& WrongCat::operator=( const WrongCat &src)
 {
-
+    this->m_type = src.m_type;
+	return *this;
 }
 
 WrongCat::~WrongCat()

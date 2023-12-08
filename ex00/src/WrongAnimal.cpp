@@ -14,12 +14,13 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
-
+    *this = copy;
 }
 
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal &src)
 {
-
+    this->m_type = src.m_type;
+	return *this;
 }
 
 WrongAnimal::~WrongAnimal()

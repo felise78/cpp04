@@ -45,6 +45,11 @@ Cat::~Cat()
 // #    MUTATEUR & ACCESSEUR    #
 // ##############################
 
+void Cat::setType( std::string type ) 
+{
+	this->m_type = type;
+}
+
 std::string	Cat::getType( void ) const
 {
 	return (this->m_type);
