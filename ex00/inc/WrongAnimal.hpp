@@ -20,7 +20,8 @@
         virtual void makeSound( void ) const;
         
         virtual std::string getType( void ) const;
-
+        virtual void setType( std::string type );
+        
         protected:
         std::string m_type;
     };

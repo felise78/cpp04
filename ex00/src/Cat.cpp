@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:27:06 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/09 16:17:59 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ Cat::Cat() : Animal()
 
 Cat::Cat( const Cat &copy ) : Animal(copy)
 {
-	*this = copy;
-	std::cout << GREEN << "Cat copy has been created." << RESET << std::endl;
+	if (this != &copy)
+	{
+		*this = copy;
+		std::cout << GREEN << "Cat copy has been created." << RESET << std::endl;
+	}
 }
 
 Cat& Cat::operator=( const Cat &src )

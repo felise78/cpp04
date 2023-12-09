@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/09 16:23:49 by hemottu           #+#    #+#             */
+/*   Updated: 2023/12/09 16:23:50 by hemottu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 #include <iostream>
 
@@ -13,7 +25,11 @@ WrongCat::WrongCat() : WrongAnimal()
 
 WrongCat::WrongCat( const WrongCat &copy ) : WrongAnimal(copy)
 {
-    *this = copy;
+	if (this != &copy)
+	{
+    	*this = copy;
+		std::cout << GREEN << "WrongCat copy has been created." << RESET << std::endl;
+	}
 }
 
 WrongCat& WrongCat::operator=( const WrongCat &src)
@@ -35,6 +51,11 @@ WrongCat::~WrongCat()
 std::string	WrongCat::getType( void ) const
 {
 	return (this->m_type);
+}
+
+void	WrongCat::setType( std::string type )
+{
+	this->m_type = type;
 }
 
 // ###############################

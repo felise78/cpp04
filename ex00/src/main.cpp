@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:28:34 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/09 16:14:12 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,51 +17,54 @@
 #include "Dog.hpp"
 #include <iostream>
 
-// Faire des tests;
-
 int main()
-{
-	// const Animal* meta = new Animal();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
+{	
+	std::cout << "Tests : " << std::endl << std::endl;
 
-	// delete meta;
-	// delete j;
-	// delete i;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+
+	delete meta;
+	delete j;
+	delete i;
 	
-	// std::cout << std::endl;
+	std::cout << std::endl << std::endl;
+	std::cout << "Test WrongClass :" << std::endl << std::endl;
+	const WrongAnimal *wrongAnimal = new WrongAnimal();
+	const WrongAnimal *wrongCat = new WrongCat();
+	wrongAnimal->makeSound();
+	wrongCat->makeSound();
+	delete wrongAnimal;
+	delete wrongCat;
+	// const WrongAnimal *test = new Cat();
+	// test->makeSound();
+	// delete test;
 
-	// const WrongAnimal *wrong = new WrongCat();
-	// wrong->makeSound();
-	// delete wrong;
+	std::cout << std::endl << std::endl;
+	std::cout << "Test de copies :" << std::endl << std::endl;
+	Dog chien;
+	std::cout << chien.getType() << std::endl;
+	chien.setType("coucou");
+	std::cout << chien.getType() << std::endl;
+	chien.makeSound();
+	Dog chien2(chien);
+	std::cout << chien2.getType() << std::endl;
+	chien2.setType("chien");
+	std::cout << chien2.getType() << std::endl;
+	chien2.makeSound();
 
-	// std::cout << std::endl;
 
-	// const Animal* j = new Dog();
-	// const Animal* i(j);
-
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-
-	//Cat chat;
-	Cat chat;
+	Animal chat("chat");
+	Animal chat2(chat);
 	std::cout << chat.getType() << std::endl;
-	chat.setType("coucou");
-	std::cout << chat.getType() << std::endl;
-	chat.makeSound();
-
-	Cat chat2(chat);
-
-	std::cout << chat2.getType() << std::endl;
-	chat2.setType("chat");
 	std::cout << chat2.getType() << std::endl;
 	chat2.makeSound();
-	//delete chat;
-
+	
 	return 0;
 }

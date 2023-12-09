@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:25:00 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/09 16:14:36 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ Animal::Animal() : m_type("Animal")
 
 Animal::Animal( const Animal &copy )
 {
-	*this = copy;
-	std::cout << RED << "Animal copy has been created." << RESET << std::endl;
+	if (this != &copy)
+	{
+		*this = copy;
+		std::cout << RED << "Animal copy has been created." << RESET << std::endl;
+	}
 }
 
 Animal& Animal::operator=( const Animal &src )
@@ -69,6 +72,6 @@ std::string	Animal::getType( void ) const
 
 void Animal::makeSound( void ) const
 {
-	std::cout << RED << "*animal sound*" << RESET << std::endl;
+	std::cout << "*animal default sound*" << std::endl;
 }
 

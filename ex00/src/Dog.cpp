@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:10:58 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 12:27:20 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/09 16:18:27 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ Dog::Dog() : Animal()
 
 Dog::Dog( const Dog &copy ) : Animal(copy)
 {
-	*this = copy;
-	std::cout << BLUE << "Dog copy has been created." << RESET <<  std::endl;
+	if (this != &copy)
+	{
+		*this = copy;
+		std::cout << BLUE << "Dog copy has been created." << RESET <<  std::endl;
+	}
 }
 
 Dog& Dog::operator=( const Dog &src)
@@ -47,6 +50,11 @@ Dog::~Dog()
 std::string	Dog::getType( void ) const
 {
 	return (this->m_type);
+}
+
+void	Dog::setType( std::string type )
+{
+	this->m_type = type;
 }
 
 // ###############################
