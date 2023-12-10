@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:27 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:22:25 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:29:09 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 		virtual std::string getType( void ) const;
 		virtual void setType( std::string type);
 
+		//std::ostream&	operator<<(std::ostream& os, const Animal& animal);
+		
 		protected:
 		std::string m_type;
 	};

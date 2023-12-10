@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 18:06:54 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:28:39 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,36 @@
 // 	return (0);
 // }
 
-int main()
-{
-	Brain *test = new Brain();
-	std::cout << test->getIdeas() << std::endl;
+int	main(void) {
+	// Animal*	herd[10];
+	// Dog		sample;
+
+	// for (int index = 0; index < 10; index++) {
+	// 	if (index % 2 == 0)
+	// 		herd[index] = new Dog(sample);
+	// 	else
+	// 		herd[index] = new Cat();
+	// }
+
+	// std::cout << "\n>> Herd" << std::endl;
+	// for (int index = 0; index < 10; index++) {
+	// 	std::cout << index << ": " << *herd[index] << std::endl;
+	// }
+
+	// std::cout << "\n>> Sound" << std::endl;
+	// for (int index = 0; index < 10; index++) {
+	// 	std::cout << index << ": ";
+	// 	herd[index]->makeSound();
+	// }
+
+	// for (int index = 0; index < 10; index++) {
+	// 	delete (herd[index]);
+	// }
+
+	// return (0);
+
+	Brain *test = new Brain;
+	Brain[0] = "coucou";
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:33:17 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 18:00:03 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:27:02 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 		Brain& operator=( const Brain &src);
 		~Brain();
 
-		void	setIdeas( std::string &ideas );
-		std::string getIdeas( void ) const [100] ;
+		const std::string&	operator[](int i) const;
 		
 		private:
 		std::string m_ideas[100];	

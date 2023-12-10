@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:23:36 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:29:04 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,9 @@ void Animal::makeSound( void ) const
 	std::cout << "default sound" << std::endl;
 }
 
+////
+
+// std::ostream&	operator<<(std::ostream& os, const Animal& animal) {
+// 	os << "{type:\"" << animal.getType()  << "\"}";
+// 	return (os);
+// }
