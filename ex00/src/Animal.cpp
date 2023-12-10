@@ -6,11 +6,13 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/09 16:14:36 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:57:21 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
 // ###############################
@@ -19,38 +21,26 @@
 
 Animal::Animal() : m_type("Animal")
 {
-	std::cout << RED << "Animal has been created." << RESET << std::endl;
+	std::cout << color::RED << color::DIM << "Animal has been created." << color::RESET << std::endl;
 }
 
 Animal::Animal( const Animal &copy )
 {
-	if (this != &copy)
-	{
-		*this = copy;
-		std::cout << RED << "Animal copy has been created." << RESET << std::endl;
-	}
+	*this = copy;
+	std::cout << color::RED << color::DIM << "Animal copy has been created." << color::RESET << std::endl;
 }
 
 Animal& Animal::operator=( const Animal &src )
 {
-	this->m_type = src.m_type;
+	this->setType(src.m_type);
 	return *this;
 }
 
 Animal::~Animal()
 {
-	std::cout << RED << "Animal has been destructed." << RESET << std::endl;
+	std::cout << color::RED << color::DIM << "Animal has been destructed." << color::RESET << std::endl;
 }
 
-
-// ##############################
-// #   CONSTRUCTEUR SURCHARGE   #
-// ##############################
-
-Animal::Animal(std::string type) : m_type(type)
-{
-	std::cout << RED << "Animal has been created." << RESET << std::endl;
-}
 
 // ##############################
 // #    MUTATEUR & ACCESSEUR    #
@@ -72,6 +62,6 @@ std::string	Animal::getType( void ) const
 
 void Animal::makeSound( void ) const
 {
-	std::cout << "*animal default sound*" << std::endl;
+	std::cout << "default sound" << std::endl;
 }
 

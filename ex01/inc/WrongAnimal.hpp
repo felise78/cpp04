@@ -2,7 +2,6 @@
 # define WRONGANIMAL_HPP
 
     #include <string>
-    #include "color.hpp"
 
     class WrongAnimal
     {

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:11:01 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/09 14:21:42 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:39:37 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include "Animal.hpp"
+#include "color.hpp"
 
 class Dog : public Animal
 {

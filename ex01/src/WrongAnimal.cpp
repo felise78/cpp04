@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 12:10:58 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:24:31 by hemottu          ###   ########.fr       */
+/*   Created: 2023/12/09 16:23:39 by hemottu           #+#    #+#             */
+/*   Updated: 2023/12/10 17:27:30 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 #include "color.hpp"
 #include <iostream>
 
@@ -18,41 +18,38 @@
 // #       FORME CANONIQUE       #
 // ###############################
 
-Dog::Dog() : Animal()
+WrongAnimal::WrongAnimal()
 {
-	m_type = "Dog";
-	m_brain = new Brain;
-	std::cout << color::BLUE << color::DIM << "Dog has been created." << color::RESET <<  std::endl;
+	std::cout << color::RED << color::DIM << "WrongAnimal has been created." << color::RESET << std::endl;
 }
 
-Dog::Dog( const Dog &copy ) : Animal(copy)
+WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
-	*this = copy;
-	std::cout << color::BLUE << color::DIM << "Dog copy has been created." << color::RESET <<  std::endl;
+    *this = copy;
+	std::cout << color::RED << color::DIM << "WrongAnimal copy has been created." << color::RESET << std::endl;
 }
 
-Dog& Dog::operator=( const Dog &src)
+WrongAnimal& WrongAnimal::operator=( const WrongAnimal &src)
 {
-	this->setType(src.m_type);
+    this->setType(src.m_type);
 	return *this;
 }
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	delete m_brain;
-	std::cout << color::BLUE << color::DIM << "Dog has been destructed." << color::RESET << std::endl;
+	std::cout << color::RED << color::DIM << "WrongAnimal has been destructed." << color::RESET << std::endl;
 }
 
 // ##############################
 // #    MUTATEUR & ACCESSEUR    #
 // ##############################
 
-std::string	Dog::getType( void ) const
+std::string	WrongAnimal::getType( void ) const
 {
 	return (this->m_type);
 }
 
-void	Dog::setType( std::string type )
+void	WrongAnimal::setType( std::string type )
 {
 	this->m_type = type;
 }
@@ -61,7 +58,7 @@ void	Dog::setType( std::string type )
 // #       FONCTION MEMBRE       #
 // ###############################
 
-void Dog::makeSound( void ) const
+void WrongAnimal::makeSound( void ) const
 {
-	std::cout << "*woof woof*" << std::endl;
+	std::cout << "*wrong animal sound*" << std::endl;
 }

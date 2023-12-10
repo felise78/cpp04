@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:23:39 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/09 16:23:41 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:55:57 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,25 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << RED << "WrongAnimal has been created." << RESET << std::endl;
+	std::cout << color::RED << color::DIM << "WrongAnimal has been created." << color::RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
-	if (this != &copy)
-	{
-    	*this = copy;
-		std::cout << RED << "WrongAnimal copy has been created." << RESET << std::endl;
-	}
+    *this = copy;
+	std::cout << color::RED << color::DIM << "WrongAnimal copy has been created." << color::RESET << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal &src)
 {
-    this->m_type = src.m_type;
+    this->setType(src.m_type);
 	return *this;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << RED << "WrongAnimal has been destructed." << RESET << std::endl;
+	std::cout << color::RED << color::DIM << "WrongAnimal has been destructed." << color::RESET << std::endl;
 }
-
-
 
 // ##############################
 // #    MUTATEUR & ACCESSEUR    #
@@ -64,5 +59,5 @@ void	WrongAnimal::setType( std::string type )
 
 void WrongAnimal::makeSound( void ) const
 {
-	std::cout << RED << "*wrong animal sound*" << RESET << std::endl;
+	std::cout << "*wrong animal sound*" << std::endl;
 }

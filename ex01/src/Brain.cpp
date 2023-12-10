@@ -6,11 +6,12 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:33:15 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 17:18:06 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 18:00:21 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+#include "color.hpp"
 #include <iostream>
 
 // ###############################
@@ -19,12 +20,13 @@
 
 Brain::Brain()
 {
-	std::cout << "Hi this is Brain" << std::endl;
+	std::cout << color::DIM << "Hi this is Brain" << color::RESET << std::endl;
 }
 
 Brain::Brain( const Brain &copy )
 {
 	*this = copy;
+	std::cout << color::DIM << "Hi this is a copy of Brain" << color::RESET << std::endl;
 }
 
 Brain& Brain::operator=( const Brain &src )
@@ -32,16 +34,31 @@ Brain& Brain::operator=( const Brain &src )
 	if(this != &src)
 	{
 		for(int i = 0 ; i < 100 ; i++)
-			ideas[i] = src.ideas[i];
+			m_ideas[i] = src.m_ideas[i];
 	}
     return *this;
 }
 
 Brain::~Brain()
 {
-	std::cout << "Bye Brain" << std::endl;
+	std::cout << color::DIM << "Bye Brain" << color::RESET << std::endl;
 }
 
 // ##############################
-// #         ACCESSEUR          #
+// #    MUTATEUR & ACCESSEUR    #
 // ##############################
+
+void	Brain::setIdeas( std::string &ideas )
+{
+	int i = 0;
+	while (i < 100)
+	{
+		this->m_ideas[i] = ideas[i];
+		i++;
+	}
+}
+
+std::string  Brain::getIdeas( void ) const [100]
+{
+	return (this->m_ideas);
+}

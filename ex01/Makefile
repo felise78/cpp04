@@ -6,7 +6,7 @@
 #    By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 19:28:45 by hemottu           #+#    #+#              #
-#    Updated: 2023/12/05 17:20:21 by hemottu          ###   ########.fr        #
+#    Updated: 2023/12/10 17:27:01 by hemottu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ SRC_FILES	=	main.cpp \
 				Animal.cpp \
 				Dog.cpp \
 				Cat.cpp \
-				Brain.cpp
+				Brain.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 

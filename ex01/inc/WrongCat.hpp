@@ -3,7 +3,7 @@
 
 #include <string>
 #include "WrongAnimal.hpp"
-#include "color.hpp"
+#include "Brain.hpp"
 
 class WrongCat : public WrongAnimal
 {
@@ -17,6 +17,9 @@ class WrongCat : public WrongAnimal
 
 	std::string getType( void ) const;
 	void setType( std::string type );
+
+	private:
+	Brain *m_brain;
 };
 
 #endif

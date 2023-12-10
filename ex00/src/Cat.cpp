@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/09 16:17:59 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:57:49 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,24 @@
 Cat::Cat() : Animal()
 {
 	m_type = "Cat";
-	std::cout << GREEN << "Cat has been created." << RESET << std::endl;
+	std::cout << color::GREEN << color::DIM << "Cat has been created." << color::RESET << std::endl;
 }
 
 Cat::Cat( const Cat &copy ) : Animal(copy)
 {
-	if (this != &copy)
-	{
-		*this = copy;
-		std::cout << GREEN << "Cat copy has been created." << RESET << std::endl;
-	}
+	*this = copy;
+	std::cout << color::GREEN << color::DIM << "Cat copy has been created." << color::RESET << std::endl;
 }
 
 Cat& Cat::operator=( const Cat &src )
 {
-	m_type = src.m_type;
+	this->setType(src.m_type);
 	return *this;
 }
 
 Cat::~Cat()
 {
-	std::cout << GREEN << "Cat has been destructed." << RESET << std::endl;
+	std::cout << color::DIM << color::GREEN << "Cat has been destructed." << color::RESET << std::endl;
 }
 
 
@@ -65,5 +62,5 @@ std::string	Cat::getType( void ) const
 
 void Cat::makeSound( void ) const
 {
-	std::cout << GREEN << "*meeeeeeow*" << RESET << std::endl;
+	std::cout << "*meeeeeeow*" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:23:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/09 16:23:50 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/10 16:56:08 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,24 @@
 WrongCat::WrongCat() : WrongAnimal()
 {
 	m_type = "WrongCat";
-	std::cout << GREEN << "WrongCat has been created." << RESET << std::endl;
+	std::cout << color::GREEN << color::DIM << "WrongCat has been created." << color::RESET << std::endl;
 }
 
 WrongCat::WrongCat( const WrongCat &copy ) : WrongAnimal(copy)
 {
-	if (this != &copy)
-	{
-    	*this = copy;
-		std::cout << GREEN << "WrongCat copy has been created." << RESET << std::endl;
-	}
+    *this = copy;
+	std::cout << color::GREEN << color::DIM << "WrongCat copy has been created." << color::RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=( const WrongCat &src)
 {
-    this->m_type = src.m_type;
+    this->setType(src.m_type);
 	return *this;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << GREEN << "WrongCat has been destructed." << RESET << std::endl;
+	std::cout << color::GREEN << color::DIM << "WrongCat has been destructed." << color::RESET << std::endl;
 }
 
 
@@ -64,5 +61,5 @@ void	WrongCat::setType( std::string type )
 
 void WrongCat::makeSound( void ) const
 {
-	std::cout << GREEN << "*meeeeeeoooooooooooooooooOOOOOOOOOooooow*" << RESET << std::endl;
+	std::cout << "*meeeeeeoooooooooooooooooOOOOOOOOOooooow*" << std::endl;
 }
