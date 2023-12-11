@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:01:10 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:53:22 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 // #       FORME CANONIQUE       #
 // ###############################
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
 	m_type = "Cat";
 	m_brain = new Brain;
 	std::cout << color::GREEN << color::DIM << "Cat has been created." << color::RESET << std::endl;
 }
 
-Cat::Cat( const Cat &copy ) : Animal(copy)
+Cat::Cat( const Cat &copy ) : AAnimal(copy)
 {
 	*this = copy;
 	m_brain = new Brain(*copy.m_brain);
@@ -34,7 +34,6 @@ Cat::Cat( const Cat &copy ) : Animal(copy)
 
 Cat& Cat::operator=( const Cat &src )
 {
-	// copie de brain 
 	this->setType(src.m_type);
 	return *this;
 }

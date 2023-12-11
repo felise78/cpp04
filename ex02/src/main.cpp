@@ -6,11 +6,11 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:37:31 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:52:04 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
@@ -33,7 +33,7 @@ int	main(void)
 	
 	////////////////////////////////////////////////////////////////////////////////// animaux
 
-	Animal *animals[10];
+	AAnimal *animals[10];
 	for (int i = 0; i < 10; i++)
 	{
 		std::cout << i << ". ";
@@ -64,9 +64,10 @@ int	main(void)
 			std::cout << dynamic_cast<Cat*>(animals[i])->getBrain()->getIdea(i) << std::endl;
 	}
 	std::cout << std::endl;
+	
 ////////////////////////////////////////////////////////////////////////////////// copies
 
-	Animal *animals_cpy[10];
+	AAnimal *animals_cpy[10];
 	for (int i = 0; i < 10; i++)
 	{
 		std::cout << i << ". ";
@@ -110,5 +111,10 @@ int	main(void)
 		std::cout << i + 10 << ". ";
 		delete (animals_cpy[i]);
 	}
+
+	//////////////////////////////////// test instance de la classe abstraite / ne compile pas
+
+	//Animal test_animal;
+
 	return (0);
 }

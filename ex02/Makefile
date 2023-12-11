@@ -6,7 +6,7 @@
 #    By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 19:28:45 by hemottu           #+#    #+#              #
-#    Updated: 2023/12/11 16:36:19 by hemottu          ###   ########.fr        #
+#    Updated: 2023/12/11 16:51:31 by hemottu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET		=	\033[0m
 GREEN		=	\033[32m
 
 SRC_FILES	=	main.cpp \
-				Animal.cpp \
+				AAnimal.cpp \
 				Dog.cpp \
 				Cat.cpp \
 				Brain.cpp \

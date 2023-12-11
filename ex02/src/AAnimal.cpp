@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AANIMAL.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:00:49 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:50:14 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "color.hpp"
@@ -20,33 +20,33 @@
 // #       FORME CANONIQUE       #
 // ###############################
 
-Animal::Animal() : m_type("Animal")
+AAnimal::AAnimal() : m_type("AAnimal")
 {
-	std::cout << color::RED << color::DIM << "Animal has been created." << color::RESET << std::endl;
+	std::cout << color::RED << color::DIM << "AAnimal has been created." << color::RESET << std::endl;
 }
 
-Animal::Animal( const Animal &copy )
+AAnimal::AAnimal( const AAnimal &copy )
 {
 	*this = copy;
-	std::cout << color::RED << color::DIM << "Animal copy has been created." << color::RESET << std::endl;
+	std::cout << color::RED << color::DIM << "AAnimal copy has been created." << color::RESET << std::endl;
 }
 
-Animal& Animal::operator=( const Animal &src )
+AAnimal& AAnimal::operator=( const AAnimal &src )
 {
 	this->setType(src.m_type);
 	return *this;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << color::RED << color::DIM << "Animal has been destructed." << color::RESET << std::endl;
+	std::cout << color::RED << color::DIM << "AAnimal has been destructed." << color::RESET << std::endl;
 }
 
 // ###############################
 // #    SURCHAGE D'OPERATEUR     #
 // ###############################
 
-std::ostream&	operator<<(std::ostream& os, const Animal& animal)
+std::ostream&	operator<<(std::ostream& os, const AAnimal& animal)
 {
 	os << animal.getType();
 	return (os);
@@ -56,12 +56,12 @@ std::ostream&	operator<<(std::ostream& os, const Animal& animal)
 // #    MUTATEUR & ACCESSEUR    #
 // ##############################
 
-void Animal::setType( std::string type)
+void AAnimal::setType( std::string type)
 {
 	this->m_type = type;
 }
 
-std::string	Animal::getType( void ) const
+std::string	AAnimal::getType( void ) const
 {
 	return (this->m_type);
 }
@@ -70,7 +70,7 @@ std::string	Animal::getType( void ) const
 // #       FONCTION MEMBRE       #
 // ###############################
 
-void Animal::makeSound( void ) const
+void AAnimal::makeSound( void ) const
 {
 	std::cout << "default sound" << std::endl;
 }
