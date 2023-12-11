@@ -6,50 +6,109 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 17:47:53 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:37:31 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include "Cat.hpp"
+#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include <iostream>
 
-// int main()
-// {
-// 	Animal *cat;
-// 	cat = new Cat;
-
-// 	cat->makeSound();
-// }
-
-// int main()
-// {
-// 	const Animal* meta = new Animal();
-// 	const Animal* j = new Dog();
-// 	const Animal* i = new Cat();
-// 	std::cout << j->getType() << " " << std::endl;
-// 	std::cout << i->getType() << " " << std::endl;
-// 	i->makeSound(); //will output the cat sound!
-// 	j->makeSound();
-// 	meta->makeSound();
-
-// 	delete meta;
-// 	delete j;
-// 	delete i;
-	
-// 	return 0;
-// }
-
-int main()
+int	main(void)
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	////////////////////////////////////////////////////////////////////////////////// brain
+	
+	std::cout << "\n>> Brain" << std::endl;
+	Brain *test = new Brain;
+	std::cout << test->getIdea(0) << std::endl;
+	test->setIdea(0, "une mauvaise idee");
+	Brain *test2 = new Brain(*test);
+	std::cout << test2->getIdea(0) << std::endl;
+	delete test;
+	delete test2;
+	std::cout << std::endl;
+	
+	////////////////////////////////////////////////////////////////////////////////// animaux
 
-	j = i; // la avec valgrind ca ne va pas
-	delete j;
-	delete i;
+	Animal *animals[10];
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		if (i % 2 == 0)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+	
+	std::cout << "\n>> Animals" << std::endl;
+	for (int i = 0; i < 10; i++)
+		std::cout << i << ". " << *animals[i] << std::endl;
 
-	// j'ai un segfault
-	return 0;
+	std::cout << "\n>> Sound" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		animals[i]->makeSound();
+	}
+	
+	std::cout << "\n>> Brain in animals" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		if (i % 2 == 0)
+			std::cout << dynamic_cast<Dog*>(animals[i])->getBrain()->getIdea(i) << std::endl;
+		else
+			std::cout << dynamic_cast<Cat*>(animals[i])->getBrain()->getIdea(i) << std::endl;
+	}
+	std::cout << std::endl;
+////////////////////////////////////////////////////////////////////////////////// copies
+
+	Animal *animals_cpy[10];
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		if (i % 2 == 0)
+			animals_cpy[i] = new Dog(*dynamic_cast<Dog*>(animals[i]));
+		else
+			animals_cpy[i] = new Cat(*dynamic_cast<Cat*>(animals[i]));
+	}
+
+	std::cout << "\n>> Animals" << std::endl;
+	for (int i = 0; i < 10; i++)
+		std::cout << i << ". " << *animals_cpy[i] << std::endl;
+
+	std::cout << "\n>> Sound" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". "; 
+		animals_cpy[i]->makeSound();
+	}
+	
+	std::cout << "\n>> Brain in animals" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		if (i % 2 == 0)
+			std::cout << dynamic_cast<Dog*>(animals_cpy[i])->getBrain()->getIdea(i) << std::endl;
+		else
+			std::cout << dynamic_cast<Cat*>(animals_cpy[i])->getBrain()->getIdea(i) << std::endl;
+	}
+
+///////////////////////////////////////////////////////////////////////////////////// delete	
+
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
+		delete (animals[i]);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i + 10 << ". ";
+		delete (animals_cpy[i]);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/05 14:29:00 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:56:04 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ class Cat : public Animal
 	Cat();
 	Cat( const Cat &copy );
 	Cat& operator=( const Cat &src );
-	virtual ~Cat();
+	~Cat();
 	
-	virtual void makeSound( void ) const;
+	void makeSound( void ) const;
 
-	virtual std::string getType( void ) const;
+	std::string getType( void ) const;
+	void	setType( std::string type );
+	Brain* getBrain( void ) const;
 
 	private:
-	Brain *brain;
+	Brain *m_brain;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:08:21 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:37:45 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,28 @@ int	main(void)
 	Animal *animals[10];
 	for (int i = 0; i < 10; i++)
 	{
+		std::cout << i << ". ";
 		if (i % 2 == 0)
 			animals[i] = new Dog();
 		else
 			animals[i] = new Cat();
 	}
 	
-	std::cout << "\n>> Types" << std::endl;
+	std::cout << "\n>> Animals" << std::endl;
 	for (int i = 0; i < 10; i++)
-	{
 		std::cout << i << ". " << *animals[i] << std::endl;
-	}
 
 	std::cout << "\n>> Sound" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
-		std::cout << i << ": ";
+		std::cout << i << ". ";
 		animals[i]->makeSound();
 	}
 	
 	std::cout << "\n>> Brain in animals" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
-		std::cout << i << ": ";
+		std::cout << i << ". ";
 		if (i % 2 == 0)
 			std::cout << dynamic_cast<Dog*>(animals[i])->getBrain()->getIdea(i) << std::endl;
 		else
@@ -70,6 +69,7 @@ int	main(void)
 	Animal *animals_cpy[10];
 	for (int i = 0; i < 10; i++)
 	{
+		std::cout << i << ". ";
 		if (i % 2 == 0)
 			animals_cpy[i] = new Dog(*dynamic_cast<Dog*>(animals[i]));
 		else
@@ -78,21 +78,19 @@ int	main(void)
 
 	std::cout << "\n>> Animals" << std::endl;
 	for (int i = 0; i < 10; i++)
-	{
 		std::cout << i << ". " << *animals_cpy[i] << std::endl;
-	}
 
 	std::cout << "\n>> Sound" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
-		std::cout << i << ": ";
+		std::cout << i << ". "; 
 		animals_cpy[i]->makeSound();
 	}
 	
 	std::cout << "\n>> Brain in animals" << std::endl;
 	for (int i = 0; i < 10; i++)
 	{
-		std::cout << i << ": ";
+		std::cout << i << ". ";
 		if (i % 2 == 0)
 			std::cout << dynamic_cast<Dog*>(animals_cpy[i])->getBrain()->getIdea(i) << std::endl;
 		else
@@ -102,10 +100,15 @@ int	main(void)
 ///////////////////////////////////////////////////////////////////////////////////// delete	
 
 	std::cout << std::endl;
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i << ". ";
 		delete (animals[i]);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << i + 10 << ". ";
 		delete (animals_cpy[i]);
 	}
-
 	return (0);
 }
