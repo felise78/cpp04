@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 18:29:04 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:00:49 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ Animal::~Animal()
 	std::cout << color::RED << color::DIM << "Animal has been destructed." << color::RESET << std::endl;
 }
 
+// ###############################
+// #    SURCHAGE D'OPERATEUR     #
+// ###############################
+
+std::ostream&	operator<<(std::ostream& os, const Animal& animal)
+{
+	os << animal.getType();
+	return (os);
+}
 
 // ##############################
 // #    MUTATEUR & ACCESSEUR    #
@@ -66,9 +75,3 @@ void Animal::makeSound( void ) const
 	std::cout << "default sound" << std::endl;
 }
 
-////
-
-// std::ostream&	operator<<(std::ostream& os, const Animal& animal) {
-// 	os << "{type:\"" << animal.getType()  << "\"}";
-// 	return (os);
-// }

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:25:37 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:56:04 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Cat : public Animal
 
 	std::string getType( void ) const;
 	void	setType( std::string type );
+	Brain* getBrain( void ) const;
 
 	private:
 	Brain *m_brain;

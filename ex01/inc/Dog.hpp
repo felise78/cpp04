@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:11:01 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:25:18 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:55:57 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Dog : public Animal
 	void makeSound( void ) const;
 
 	std::string getType( void ) const;
-
 	void	setType( std::string type );
+	Brain* getBrain( void ) const;
 
 	private:
 	Brain *m_brain;

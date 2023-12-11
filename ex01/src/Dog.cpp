@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:10:58 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:24:31 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:01:20 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Dog::Dog() : Animal()
 Dog::Dog( const Dog &copy ) : Animal(copy)
 {
 	*this = copy;
+	m_brain = new Brain(*copy.m_brain);
 	std::cout << color::BLUE << color::DIM << "Dog copy has been created." << color::RESET <<  std::endl;
 }
 
@@ -44,7 +45,7 @@ Dog::~Dog()
 }
 
 // ##############################
-// #    MUTATEUR & ACCESSEUR    #
+// #    MUTATEUR & ACCESSEURS   #
 // ##############################
 
 std::string	Dog::getType( void ) const
@@ -52,9 +53,14 @@ std::string	Dog::getType( void ) const
 	return (this->m_type);
 }
 
-void	Dog::setType( std::string type )
+void Dog::setType( std::string type )
 {
 	this->m_type = type;
+}
+
+Brain* Dog::getBrain() const
+{
+	return (this->m_brain);
 }
 
 // ###############################

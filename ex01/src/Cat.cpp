@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:26:10 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/11 16:01:10 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::Cat() : Animal()
 Cat::Cat( const Cat &copy ) : Animal(copy)
 {
 	*this = copy;
+	m_brain = new Brain(*copy.m_brain);
 	std::cout << color::GREEN << color::DIM << "Cat copy has been created." << color::RESET << std::endl;
 }
 
@@ -46,7 +47,7 @@ Cat::~Cat()
 
 
 // ##############################
-// #    MUTATEUR & ACCESSEUR    #
+// #    MUTATEUR & ACCESSEURS   #
 // ##############################
 
 void Cat::setType( std::string type ) 
@@ -57,6 +58,11 @@ void Cat::setType( std::string type )
 std::string	Cat::getType( void ) const
 {
 	return (this->m_type);
+}
+
+Brain* Cat::getBrain( void ) const
+{
+	return (this->m_brain);
 }
 
 
