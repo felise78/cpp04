@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:48:02 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:24:11 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/13 19:43:16 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ AMateria* MateriaSource::createMateria(std::string const & materia) {
 	{
 		if (m_materias[i]->getType() == materia)
 		{
-			AMateria *cloned = NULL; // appeller fonction clone au lieu de NULL
+			AMateria *cloned = m_materias[i]->clone();
 			return cloned;
 		}	
 		i++;
