@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:41:50 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 15:12:59 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/14 16:43:22 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 		Cure& operator=( const Cure &src );
 		~Cure();
 
+		std::string const & getType() const;
+		
 		AMateria* clone() const ;
 		void use( ICharacter& target );
 		

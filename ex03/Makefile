@@ -6,13 +6,13 @@
 #    By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 19:28:45 by hemottu           #+#    #+#              #
-#    Updated: 2023/12/13 19:16:29 by hemottu          ###   ########.fr        #
+#    Updated: 2023/12/14 18:51:03 by hemottu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= 	amateria
 CXX			=	c++
-CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
 
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/

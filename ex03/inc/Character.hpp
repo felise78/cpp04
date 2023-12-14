@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:11:43 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:02:36 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/14 23:06:15 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,17 @@
 		std::string const & getName() const;
 		// fonctions membres
 		void equip(AMateria* m);
-		//void unequip(int idx); // laisser les objets au sol
+		void unequip(int idx);
 		void use(int idx, ICharacter &target);
-		void init_inventory( void );
-		void del_inventory( void );
+		// utils
+		void init_inventory_n_floor( void );
+		void del_inventory_n_floor( void );
+		void printInventory( void );
 		
 		private:
 		std::string m_name;
    		AMateria *m_inventory[4];
+		AMateria *m_floor[100];
 	};
 
 #endif

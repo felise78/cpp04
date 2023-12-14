@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:00 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:14:52 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/14 21:06:31 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,38 @@
 // #       FORME CANONIQUE       #
 // ###############################
 
-Cure::Cure() : m_type("cure")
+Cure::Cure() : AMateria("cure")
 {
-	std::cout << color::YELLOW << "Cure has been created" << color::RESET << std::endl;
+	this->m_type = "cure";
+	std::cout << color::DIM << "Cure" << color::GREEN << " has been created" << color::RESET << std::endl;
 }
 		
-Cure::Cure( const Cure &copy )
+Cure::Cure( const Cure &copy ) : AMateria(copy)
 {
 	*this = copy;
-	std::cout << color::YELLOW << "Cure copy has been created" << color::RESET << std::endl;
+	std::cout << color::DIM << "Cure copy" << color::GREEN << " has been created" << color::RESET << std::endl;
 }
 
 Cure& Cure::operator=( const Cure &copy )
 {
-	(void)copy;
+	this->m_type = copy.m_type;
 	return *this;
 }
 
 Cure::~Cure()
 {
-	std::cout << color::YELLOW << "Cure has been destructed" << color::RESET << std::endl;
+	std::cout << color::DIM << "Cure" << color::RED << " has been destructed" << color::RESET << std::endl;
 }
 
+
+// ###############################
+// #          ACCESSEUR          #
+// ###############################
+
+std::string const & Cure::getType() const
+{
+	return this->m_type;
+}
 
 // ###############################
 // #      FONCTIONS MEMBRES      #

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:41:46 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:34:59 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/14 21:50:13 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 		std::string const & getType() const;
 		//fonctions membres
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target) = 0;
 		
 		protected: 
 		std::string m_type;

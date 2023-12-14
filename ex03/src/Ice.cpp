@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 20:47:48 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:30:35 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/14 21:07:30 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,36 +18,38 @@
 // #       FORME CANONIQUE       #
 // ###############################
 
-Ice::Ice() : m_type("ice")
+Ice::Ice() : AMateria("ice")
 {
-	m_type = "ice";
-	std::cout << color::YELLOW << "Ice has been created" << color::RESET << std::endl;
+	this->m_type = "ice";
+	std::cout << color::DIM << "Ice" << color::GREEN << " has been created" << color::RESET << std::endl;
 }
 		
-Ice::Ice( const Ice &copy )
+Ice::Ice( const Ice &copy ) : AMateria(copy)
 {
 	*this = copy;
-	std::cout << color::YELLOW << "Ice copy has been created" << color::RESET << std::endl;
+	std::cout << color::DIM << "Ice copy" << color::GREEN << " has been created" << color::RESET << std::endl;
 }
 
 Ice& Ice::operator=( const Ice &copy )
 {
-	(void)copy;
+	this->m_type = copy.m_type;
 	return *this;
 }
 
 Ice::~Ice()
 {
-	std::cout << color::YELLOW << "Ice has been destructed" << color::RESET << std::endl;
+	std::cout << color::DIM << "Ice" << color::RED << " has been destructed" << color::RESET << std::endl;
 }
 
 
+// ###############################
+// #          ACCESSEUR          #
+// ###############################
 
-
-// std::string const & Ice::getType() const
-// {
-// 	return this->m_type;
-// }
+std::string const & Ice::getType() const
+{
+	return this->m_type;
+}
 
 // ###############################
 // #      FONCTION MEMBRE        #
