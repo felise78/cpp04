@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:11:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/14 23:06:01 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 09:56:54 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Character& Character::operator=( const Character &copy )
 		if (copy.m_inventory[i] != NULL)
 			m_inventory[i] = copy.m_inventory[i]->clone();
 	}
-	// copier le floor ?
 	return *this;
 }
 
@@ -64,7 +63,7 @@ Character::Character(const std::string& name) : m_name(name)
 }
 
 // ###############################
-// #          ACCESSEURS         #
+// #          ACCESSEUR          #
 // ###############################
 
 std::string const & Character::getName() const
@@ -98,7 +97,13 @@ void Character::equip(AMateria* m)
 		std::cout << "Character has no space in his inventory" << std::endl;
 		return;
 	}
-	this->m_inventory[i] = m;
+	if (m->getAffect() == 0)
+	{
+		m->setAffect(true);
+		this->m_inventory[i] = m;
+	}
+	else
+		std::cout << "Materia has already been affected to a character" << std::endl;
 }
 
 void Character::unequip(int idx)
@@ -112,7 +117,7 @@ void Character::unequip(int idx)
 	int i = 0;
 	while(m_floor[i] != NULL)
 		i++;
-	this->m_floor[i] = this->m_inventory[idx]; 
+	this->m_floor[i] = m_inventory[idx];
 	for (int i = idx; i < 3; i++)
 	{
 		m_inventory[i] = m_inventory[i + 1];

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:47:58 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/13 19:23:47 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 08:59:32 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 	class MateriaSource : public IMateriaSource {
 
 		public:
+		// forme canonique
 		MateriaSource();
 		MateriaSource( const MateriaSource &copy );
 		MateriaSource& operator=( const MateriaSource &copy );
 		~MateriaSource();
-		
+		// fonctions membres
 		void learnMateria(AMateria* materia);
 		AMateria* createMateria(std::string const & materia);
 

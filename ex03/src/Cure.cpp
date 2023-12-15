@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:00 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/14 21:06:31 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 09:44:26 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cure::Cure( const Cure &copy ) : AMateria(copy)
 Cure& Cure::operator=( const Cure &copy )
 {
 	this->m_type = copy.m_type;
+	this->m_affected_to = copy.m_affected_to;
 	return *this;
 }
 

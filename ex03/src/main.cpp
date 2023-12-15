@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:09 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/14 23:04:14 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 10:11:56 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,39 +22,40 @@
 
 // ---------------------------------------------------------------------  main du sujet 
 
-int main()
-{
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	Character *me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->printInventory();
-	me->use(0, *bob);
-	me->use(1, *bob);
+// int main()
+// {
+// 	IMateriaSource* src = new MateriaSource();
+// 	src->learnMateria(new Ice());
+// 	src->learnMateria(new Cure());
+// 	Character *me = new Character("me");
+// 	AMateria* tmp;
+// 	tmp = src->createMateria("ice");
+// 	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	//tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	tmp = src->createMateria("cure");
+// 	me->equip(tmp);
+// 	ICharacter* bob = new Character("bob");
+// 	me->printInventory();
+// 	me->use(0, *bob);
+// 	me->use(1, *bob);
 
-	me->unequip(3);
-	me->printInventory();
+// 	me->unequip(0);
+// 	me->printInventory();
 	
-	delete bob;
-	delete me;
-	delete src;
-	return 0;
-}
+// 	bob->equip(tmp);
+
+// 	delete bob;
+// 	delete me;
+// 	delete src;
+// 	return 0;
+// }
 
 // ----------------------------------------------------------------------------------------
 
 
-/*
 int main ()
 {
 	// tests de copies
@@ -101,34 +102,29 @@ int main ()
 	tmp = src->createMateria("fire");
 	me->equip(tmp);
 	me->printInventory();
-	delete src;
-	//delete me;
 
-	// tests Characters
+	// test copie profonde Character
 	std::cout << "\n>> Test copie profonde de Character" << std::endl;
 	Character *you = new Character(*me);
+	std::cout << you->getName() << std::endl;
 	you->printInventory();
-	delete me;
 	delete you;
-}*/
 
-
-
-
-// int main ()
-// {
-// 	Character *perso = new Character("Pierre");
-// 	std::cout << "perso : " << perso->getName() << std::endl;
-// 	AMateria *tmp = new Ice();
-// 	std::cout << "tmp : " << tmp->getType() << std::endl;
-// 	perso->equip(tmp);
-// 	std::cout << "inventory de pierre : " << perso->getInventory(0).getType() << std::endl;
-	
-	
-// 	Character *copy = new Character(*perso);
-	
-// 	std::cout << "prenom de copy : " << copy->getName() << std::endl;
-// 	std::cout <<  "inventory de copy : " << copy->getInventory(0).getType() << std::endl;
-// 	delete perso;
-// 	delete copy;
-// }
+	// test capacite inventaire
+	std::cout << "\n>> Test capacite max de l'inventaire + unequip()" << std::endl;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->printInventory();
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	std::cout << color::DIM << "making space with unequip() :" << color::RESET << std::endl;
+	me->unequip(3);
+	me->printInventory();
+	std::cout << color::DIM << "equip() materia again : " << color::RESET << std::endl;
+	me->equip(tmp);
+	me->printInventory();
+	delete src;
+	delete me;
+}
