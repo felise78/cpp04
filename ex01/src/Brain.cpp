@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:33:15 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 15:58:05 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 10:55:00 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,7 @@
 
 Brain::Brain()
 {
-	std::string result = "";
-	
-	for (int i = 0; i < 100; i++)
-	{
-		int nb = i;
-		if (nb == 0)
-			result = "0";
-		while (nb != 0)
-		{
-			int digit = nb % 10;
-			result += static_cast<char>(digit + '0');
-			nb /= 10;
-   		}
-		m_ideas[i] = "une " + result + "e idee";
-		result = "";
-	}
-	
+	this->init_brain();
 	std::cout << color::DIM << "Hi this is Brain" << color::RESET << std::endl;
 }
 
@@ -72,4 +56,28 @@ std::string& Brain::getIdea(int i)
 void Brain::setIdea(int i, const std::string& idea)
 {
     this->m_ideas[i] = idea;
+}
+
+// ###############################
+// #       FONCTION MEMBRE       #
+// ###############################
+
+void Brain::init_brain( void )
+{
+	std::string result = "";
+	
+	for (int i = 0; i < 100; i++)
+	{
+		int nb = i;
+		if (nb == 0)
+			result = "0";
+		while (nb != 0)
+		{
+			int digit = nb % 10;
+			result += static_cast<char>(digit + '0');
+			nb /= 10;
+   		}
+		m_ideas[i] = "une " + result + "e idee";
+		result = "";
+	}
 }

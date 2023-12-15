@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:19 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 16:54:31 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 10:53:33 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main(void) {
 	Animal *animal = new Animal();
 	Animal *dog = new Dog();
 	Animal *cat = new Cat();
-	WrongAnimal *wrongCat = new WrongCat();
+	//WrongAnimal *wrongcat = new Cat();
+	WrongAnimal *wrongAnimal = new WrongCat();
+	WrongCat *wrongCat = new WrongCat();
 	Animal *dogCopy = new Dog(*dynamic_cast<Dog*>(dog));
     Animal *catCopy = new Cat(*dynamic_cast<Cat*>(cat));
 
@@ -35,22 +37,18 @@ int	main(void) {
 	std::cout << "catCopy : " << catCopy->getType() << std::endl;
 
 	std::cout << "\n>> MakeSound" << std::endl;
-
 	std::cout << "animal: " << std::endl;
 	animal->makeSound();
-
 	std::cout << "dog: " << std::endl;
 	dog->makeSound();
-
 	std::cout << "dog copy: " << std::endl;
 	dogCopy->makeSound();
-
 	std::cout << "cat: " << std::endl;
 	cat->makeSound();
-
 	std::cout << "cat copy: " << std::endl;
 	catCopy->makeSound();
-
+	std::cout << "wrong animal: " << std::endl;
+	wrongAnimal->makeSound();
 	std::cout << "wrong cat: " << std::endl;
 	wrongCat->makeSound();
 	std::cout << std::endl;

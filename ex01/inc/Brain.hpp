@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:33:17 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 12:15:04 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/12/15 10:54:23 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 		std::string& getIdea(int i);
 		void setIdea(int i, const std::string& idea);
 
+		void init_brain( void );
+		
 		private:
 		std::string m_ideas[100];	
 	};
