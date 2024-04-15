@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:03:25 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:00:49 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:46:33 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 
 Animal::Animal() : m_type("Animal")
 {
-	std::cout << color::RED << color::DIM << "Animal has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "Animal has been created." << RESET << std::endl;
 }
 
 Animal::Animal( const Animal &copy )
 {
 	*this = copy;
-	std::cout << color::RED << color::DIM << "Animal copy has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "Animal copy has been created." << RESET << std::endl;
 }
 
 Animal& Animal::operator=( const Animal &src )
@@ -39,7 +39,7 @@ Animal& Animal::operator=( const Animal &src )
 
 Animal::~Animal()
 {
-	std::cout << color::RED << color::DIM << "Animal has been destructed." << color::RESET << std::endl;
+	std::cout << RED << DIM << "Animal has been destructed." << RESET << std::endl;
 }
 
 // ###############################

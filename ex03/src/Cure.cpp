@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:00 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/15 09:44:26 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:24 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 Cure::Cure() : AMateria("cure")
 {
 	this->m_type = "cure";
-	std::cout << color::DIM << "Cure" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "Cure" << GREEN << " has been created" << RESET << std::endl;
 }
 		
 Cure::Cure( const Cure &copy ) : AMateria(copy)
 {
 	*this = copy;
-	std::cout << color::DIM << "Cure copy" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "Cure copy" << GREEN << " has been created" << RESET << std::endl;
 }
 
 Cure& Cure::operator=( const Cure &copy )
@@ -39,7 +39,7 @@ Cure& Cure::operator=( const Cure &copy )
 
 Cure::~Cure()
 {
-	std::cout << color::DIM << "Cure" << color::RED << " has been destructed" << color::RESET << std::endl;
+	std::cout << DIM << "Cure" << RED << " has been destructed" << RESET << std::endl;
 }
 
 

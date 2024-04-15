@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:41:57 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/15 09:46:08 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:18 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 
 AMateria::AMateria() : m_type("unknown"), m_affected_to(false)
 {
-	std::cout << color::DIM << "AMateria" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "AMateria" << GREEN << " has been created" << RESET << std::endl;
 }
 
 AMateria::AMateria( const AMateria &copy )
 {
 	*this = copy;
-	std::cout << color::DIM << "AMateria copy " << color::GREEN << "has been created" << color::RESET << std::endl;
+	std::cout << DIM << "AMateria copy " << GREEN << "has been created" << RESET << std::endl;
 }
 	
 AMateria&  AMateria::operator=( const AMateria &src )
@@ -38,7 +38,7 @@ AMateria&  AMateria::operator=( const AMateria &src )
 
 AMateria::~AMateria()
 {
-	std::cout << color::DIM << "AMateria" << color::RED << " has been destructed" << color::RESET << std::endl;
+	std::cout << DIM << "AMateria" << RED << " has been destructed" << RESET << std::endl;
 }
 
 // ###############################
@@ -47,7 +47,7 @@ AMateria::~AMateria()
 
 AMateria::AMateria( std::string const & type ) : m_type(type), m_affected_to(false)
 {
-	std::cout << color::DIM << "AMateria" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "AMateria" << GREEN << " has been created" << RESET << std::endl;
 }
 
 // ###############################

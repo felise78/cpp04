@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:23:39 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/10 17:27:30 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:12 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << color::RED << color::DIM << "WrongAnimal has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "WrongAnimal has been created." << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal &copy )
 {
     *this = copy;
-	std::cout << color::RED << color::DIM << "WrongAnimal copy has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "WrongAnimal copy has been created." << RESET << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal &src)
@@ -37,7 +37,7 @@ WrongAnimal& WrongAnimal::operator=( const WrongAnimal &src)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << color::RED << color::DIM << "WrongAnimal has been destructed." << color::RESET << std::endl;
+	std::cout << RED << DIM << "WrongAnimal has been destructed." << RESET << std::endl;
 }
 
 // ##############################

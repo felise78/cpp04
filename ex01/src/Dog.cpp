@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:10:58 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:01:20 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:54:42 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Dog::Dog() : Animal()
 {
 	m_type = "Dog";
 	m_brain = new Brain;
-	std::cout << color::BLUE << color::DIM << "Dog has been created." << color::RESET <<  std::endl;
+	std::cout << BLUE << DIM << "Dog has been created." << RESET <<  std::endl;
 }
 
 Dog::Dog( const Dog &copy ) : Animal(copy)
 {
 	*this = copy;
 	m_brain = new Brain(*copy.m_brain);
-	std::cout << color::BLUE << color::DIM << "Dog copy has been created." << color::RESET <<  std::endl;
+	std::cout << BLUE << DIM << "Dog copy has been created." << RESET <<  std::endl;
 }
 
 Dog& Dog::operator=( const Dog &src)
@@ -41,7 +41,7 @@ Dog& Dog::operator=( const Dog &src)
 Dog::~Dog()
 {
 	delete m_brain;
-	std::cout << color::BLUE << color::DIM << "Dog has been destructed." << color::RESET << std::endl;
+	std::cout << BLUE << DIM << "Dog has been destructed." << RESET << std::endl;
 }
 
 // ##############################

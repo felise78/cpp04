@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:09:35 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/11 16:01:10 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:46:39 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ Cat::Cat() : Animal()
 {
 	m_type = "Cat";
 	m_brain = new Brain;
-	std::cout << color::GREEN << color::DIM << "Cat has been created." << color::RESET << std::endl;
+	std::cout << GREEN << DIM << "Cat has been created." << RESET << std::endl;
 }
 
 Cat::Cat( const Cat &copy ) : Animal(copy)
 {
 	*this = copy;
 	m_brain = new Brain(*copy.m_brain);
-	std::cout << color::GREEN << color::DIM << "Cat copy has been created." << color::RESET << std::endl;
+	std::cout << GREEN << DIM << "Cat copy has been created." << RESET << std::endl;
 }
 
 Cat& Cat::operator=( const Cat &src )
@@ -42,7 +42,7 @@ Cat& Cat::operator=( const Cat &src )
 Cat::~Cat()
 {
 	delete m_brain;
-	std::cout << color::DIM << color::GREEN << "Cat has been destructed." << color::RESET << std::endl;
+	std::cout << DIM << GREEN << "Cat has been destructed." << RESET << std::endl;
 }
 
 

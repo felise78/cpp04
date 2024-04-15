@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:11:49 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/15 09:56:54 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:21 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 Character::Character() : m_name("default")
 {
 	this->init_inventory_n_floor();
-	std::cout << color::DIM << "Character" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "Character" << GREEN << " has been created" << RESET << std::endl;
 }
 		
 Character::Character( const Character &copy )
 {
 	this->init_inventory_n_floor();
 	*this = copy;
-	std::cout << color::DIM << "Character copy" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "Character copy" << GREEN << " has been created" << RESET << std::endl;
 }
 
 Character& Character::operator=( const Character &copy )
@@ -48,7 +48,7 @@ Character& Character::operator=( const Character &copy )
 Character::~Character()
 {
 	this->del_inventory_n_floor();
-	std::cout << color::DIM << "Character " << this->m_name << color::RED << " has been destructed" << color::RESET << std::endl;
+	std::cout << DIM << "Character " << this->m_name << RED << " has been destructed" << RESET << std::endl;
 }
 
 
@@ -59,7 +59,7 @@ Character::~Character()
 Character::Character(const std::string& name) : m_name(name)
 {
 	this->init_inventory_n_floor();
-	std::cout << color::DIM << "Character " << this->m_name << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "Character " << this->m_name << GREEN << " has been created" << RESET << std::endl;
 }
 
 // ###############################

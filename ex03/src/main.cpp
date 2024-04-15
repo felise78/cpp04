@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:42:09 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/15 10:11:56 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:31 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,10 +119,10 @@ int main ()
 	me->printInventory();
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	std::cout << color::DIM << "making space with unequip() :" << color::RESET << std::endl;
+	std::cout << DIM << "making space with unequip() :" << RESET << std::endl;
 	me->unequip(3);
 	me->printInventory();
-	std::cout << color::DIM << "equip() materia again : " << color::RESET << std::endl;
+	std::cout << DIM << "equip() materia again : " << RESET << std::endl;
 	me->equip(tmp);
 	me->printInventory();
 	delete src;

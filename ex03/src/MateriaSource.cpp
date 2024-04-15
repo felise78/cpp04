@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:48:02 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/14 22:02:19 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:47:35 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4 ; i++)
 		m_materias[i] = NULL;
-	std::cout << color::DIM << "MateriaSource" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "MateriaSource" << GREEN << " has been created" << RESET << std::endl;
 }
 		
 MateriaSource::MateriaSource( const MateriaSource &copy )
@@ -30,7 +30,7 @@ MateriaSource::MateriaSource( const MateriaSource &copy )
 	for (int i = 0; i < 4 ; i++)
 		m_materias[i] = NULL;
 	*this = copy;
-	std::cout << color::DIM << "MateriaSource copy" << color::GREEN << " has been created" << color::RESET << std::endl;
+	std::cout << DIM << "MateriaSource copy" << GREEN << " has been created" << RESET << std::endl;
 }
 
 MateriaSource& MateriaSource::operator=( const MateriaSource &copy )
@@ -47,7 +47,7 @@ MateriaSource::~MateriaSource()
 		if (m_materias[i] != NULL)
 			delete m_materias[i];
 	}
-	std::cout << color::DIM << "MateriaSource" << color::RED << " has been destructed" << color::RESET << std::endl;
+	std::cout << DIM << "MateriaSource" << RED << " has been destructed" << RESET << std::endl;
 }
 
 

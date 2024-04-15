@@ -22,13 +22,13 @@
 
 AAnimal::AAnimal() : m_type("AAnimal")
 {
-	std::cout << color::RED << color::DIM << "AAnimal has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "AAnimal has been created." << RESET << std::endl;
 }
 
 AAnimal::AAnimal( const AAnimal &copy )
 {
 	*this = copy;
-	std::cout << color::RED << color::DIM << "AAnimal copy has been created." << color::RESET << std::endl;
+	std::cout << RED << DIM << "AAnimal copy has been created." << RESET << std::endl;
 }
 
 AAnimal& AAnimal::operator=( const AAnimal &src )
@@ -39,7 +39,7 @@ AAnimal& AAnimal::operator=( const AAnimal &src )
 
 AAnimal::~AAnimal()
 {
-	std::cout << color::RED << color::DIM << "AAnimal has been destructed." << color::RESET << std::endl;
+	std::cout << RED << DIM << "AAnimal has been destructed." << RESET << std::endl;
 }
 
 // ###############################

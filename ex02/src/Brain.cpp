@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:33:15 by hemottu           #+#    #+#             */
-/*   Updated: 2023/12/15 10:55:37 by hemottu          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:46:54 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 Brain::Brain()
 {
 	this->init_brain();
-	std::cout << color::DIM << "Hi this is Brain" << color::RESET << std::endl;
+	std::cout << DIM << "Hi this is Brain" << RESET << std::endl;
 }
 
 Brain::Brain( const Brain &copy )
 {
 	*this = copy;
-	std::cout << color::DIM << "Hi this is a copy of Brain" << color::RESET << std::endl;
+	std::cout << DIM << "Hi this is a copy of Brain" << RESET << std::endl;
 }
 
 Brain& Brain::operator=( const Brain &src )
@@ -40,7 +40,7 @@ Brain& Brain::operator=( const Brain &src )
 
 Brain::~Brain()
 {
-	std::cout << color::DIM << "Bye Brain" << color::RESET << std::endl;
+	std::cout << DIM << "Bye Brain" << RESET << std::endl;
 }
 
 // ##############################
